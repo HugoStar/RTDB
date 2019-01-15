@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		28CB982A4A80D0F340B224D4 /* Pods_LearningFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC65A4D958568EB9EB5EEB38 /* Pods_LearningFirebase.framework */; };
 		776ABC2321E134BD0036BE9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776ABC2221E134BD0036BE9A /* AppDelegate.swift */; };
-		776ABC2521E134BD0036BE9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776ABC2421E134BD0036BE9A /* ViewController.swift */; };
+		776ABC2521E134BD0036BE9A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776ABC2421E134BD0036BE9A /* MainVC.swift */; };
 		776ABC2821E134BD0036BE9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776ABC2621E134BD0036BE9A /* Main.storyboard */; };
 		776ABC2A21E134BE0036BE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 776ABC2921E134BE0036BE9A /* Assets.xcassets */; };
 		776ABC2D21E134BE0036BE9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776ABC2B21E134BE0036BE9A /* LaunchScreen.storyboard */; };
 		776ABC3521E1391D0036BE9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 776ABC3421E1391D0036BE9A /* GoogleService-Info.plist */; };
+		77B50A2121EE79FF00FE39ED /* AddThoughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B50A2021EE79FF00FE39ED /* AddThoughtVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10A1212C13543186618A23C3 /* Pods-LearningFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		776ABC1F21E134BD0036BE9A /* LearningFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		776ABC2221E134BD0036BE9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		776ABC2421E134BD0036BE9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		776ABC2421E134BD0036BE9A /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		776ABC2721E134BD0036BE9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		776ABC2921E134BE0036BE9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		776ABC2C21E134BE0036BE9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		776ABC2E21E134BE0036BE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		776ABC3421E1391D0036BE9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		77B50A2021EE79FF00FE39ED /* AddThoughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtVC.swift; sourceTree = "<group>"; };
 		BCD15600F99D6BC964F66418 /* Pods-LearningFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		CC65A4D958568EB9EB5EEB38 /* Pods_LearningFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -71,8 +73,10 @@
 		776ABC2121E134BD0036BE9A /* LearningFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				77B50A1E21EE731100FE39ED /* Model */,
+				77B50A1D21EE730B00FE39ED /* View */,
+				77B50A1C21EE730500FE39ED /* Controller */,
 				776ABC2221E134BD0036BE9A /* AppDelegate.swift */,
-				776ABC2421E134BD0036BE9A /* ViewController.swift */,
 				776ABC2621E134BD0036BE9A /* Main.storyboard */,
 				776ABC2921E134BE0036BE9A /* Assets.xcassets */,
 				776ABC2B21E134BE0036BE9A /* LaunchScreen.storyboard */,
@@ -80,6 +84,29 @@
 				776ABC3421E1391D0036BE9A /* GoogleService-Info.plist */,
 			);
 			path = LearningFirebase;
+			sourceTree = "<group>";
+		};
+		77B50A1C21EE730500FE39ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77B50A2021EE79FF00FE39ED /* AddThoughtVC.swift */,
+				776ABC2421E134BD0036BE9A /* MainVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		77B50A1D21EE730B00FE39ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77B50A1E21EE731100FE39ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8A14D1DA6E5C256859622CBF /* Pods */ = {
@@ -247,7 +274,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				776ABC2521E134BD0036BE9A /* ViewController.swift in Sources */,
+				776ABC2521E134BD0036BE9A /* MainVC.swift in Sources */,
+				77B50A2121EE79FF00FE39ED /* AddThoughtVC.swift in Sources */,
 				776ABC2321E134BD0036BE9A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
