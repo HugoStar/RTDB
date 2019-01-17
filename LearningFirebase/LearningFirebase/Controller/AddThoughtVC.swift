@@ -19,7 +19,7 @@ class AddThoughtVC: UIViewController, UITextViewDelegate {
   @IBOutlet weak var postButton: UIButton!
   
   
-  private var selectedCategory = ThoughtCategory.funny
+  private var selectedCategory = ThoughtCategory.funny.rawValue
   
   
     override func viewDidLoad() {
@@ -35,14 +35,14 @@ class AddThoughtVC: UIViewController, UITextViewDelegate {
     }
     
   @IBAction func postButtonTapped(_ sender: Any) {
-    
-    Firestore.firestore().collection("thoughts").addDocument(data: [
-      "category" : selectedCategory,
-      "numComments" : 0,
-      "numLikes" : 0,
-      "thoughtText" : thougthText.text,
-      "timestamp" : FieldValue.serverTimestamp(),
-      "username" : usernameText.text!
+    guard let username = usernameText.text else { return }
+    Firestore.firestore().collection(THOUGHTS_REF).addDocument(data: [
+      CATEGORY : selectedCategory,
+      NUM_COMMENTS : 0,
+      NUM_LIKES : 0,
+      THOUGHT_TEXT : thougthText.text,
+      TIMESTAMP : FieldValue.serverTimestamp(),
+      USERNAME : username
     ]) { error in
       
       if let error = error {
@@ -55,6 +55,15 @@ class AddThoughtVC: UIViewController, UITextViewDelegate {
     
   }
   @IBAction func categoryChanged(_ sender: Any) {
+    
+    switch categorySegment.selectedSegmentIndex {
+    case 0:
+      selectedCategory = ThoughtCategory.funny.rawValue
+    case 1:
+      selectedCategory = ThoughtCategory.serious.rawValue
+    default:
+      selectedCategory = ThoughtCategory.crazy.rawValue
+    }
 
   }
   
