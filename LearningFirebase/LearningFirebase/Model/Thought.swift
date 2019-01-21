@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 
 struct Thought {
@@ -27,5 +28,32 @@ struct Thought {
     self.numComments = numComments
     self.documentId = documentId
   }
+  
+  
+  static func parseData(snapshot: QuerySnapshot?) -> [Thought] {
+    
+    var thoughts = [Thought]()
+
+    guard let snap = snapshot else { return thoughts }
+
+    for document in snap.documents {
+      let data = document.data()
+      let userName = data[USERNAME] as? String ?? "Anonymuos"
+      let timestamp = data[TIMESTAMP] as? Date ?? Date()
+      let toughtText = data[THOUGHT_TEXT] as? String ?? ""
+      let numLikes = data[NUM_LIKES] as? Int ?? 0
+      let numComments = data[NUM_COMMENTS] as? Int ?? 0
+      let documentID = document.documentID
+      
+      
+      let newThought = Thought(username: userName, timestamp: timestamp, thoughtTxt: toughtText, numLikes: numLikes, numComments: numComments, documentId: documentID)
+      
+      thoughts.append(newThought)
+    }
+    
+    return thoughts
+    
+  }
+  
   
 }

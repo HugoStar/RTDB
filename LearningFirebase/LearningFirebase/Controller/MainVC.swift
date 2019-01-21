@@ -41,33 +41,40 @@ class MainVC: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    setListener()
+  }
+  
+  func setListener() {
     
-     thoughtsListener = thoughtsCollectionRef.addSnapshotListener { [weak self] query, error in
-      if let error = error { debugPrint("error fetching docs: \(error)") }
-      else {
-        
-        self?.thoughts.removeAll()
-        
-        for document in query!.documents {
-          let data = document.data()
-          let userName = data[USERNAME] as? String ?? "Anonymuos"
-          let timestamp = data[TIMESTAMP] as? Date ?? Date()
-          let toughtText = data[THOUGHT_TEXT] as? String ?? ""
-          let numLikes = data[NUM_LIKES] as? Int ?? 0
-          let numComments = data[NUM_COMMENTS] as? Int ?? 0
-          let documentID = document.documentID
-          
-          
-          let newThought = Thought(username: userName, timestamp: timestamp, thoughtTxt: toughtText, numLikes: numLikes, numComments: numComments, documentId: documentID)
-          self?.thoughts.append(newThought)
-        }
-        self?.tableView.reloadData()
+    if selectedCategory == ThoughtCategory.popular.rawValue {
+      thoughtsListener = thoughtsCollectionRef
+        .order(by: NUM_LIKES, descending: true)
+        .addSnapshotListener { [weak self] query, error in
+          if let error = error { debugPrint("error fetching docs: \(error)") }
+          else {
+            self?.thoughts.removeAll()
+            self?.thoughts = Thought.parseData(snapshot: query)
+            self?.tableView.reloadData()
+          }
+      }
+    } else {
+      thoughtsListener = thoughtsCollectionRef
+        .whereField(CATEGORY, isEqualTo: selectedCategory)
+        .order(by: TIMESTAMP, descending: true)
+        .addSnapshotListener { [weak self] query, error in
+          if let error = error { debugPrint("error fetching docs: \(error)") }
+          else { 
+            self?.thoughts.removeAll()
+            self?.thoughts = Thought.parseData(snapshot: query)
+            self?.tableView.reloadData()
+          }
       }
     }
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
+    guard let thoughtsListener = thoughtsListener else { return }
     thoughtsListener.remove()
   }
 
@@ -83,6 +90,9 @@ class MainVC: UIViewController {
     default:
       selectedCategory = ThoughtCategory.popular.rawValue
     }
+    
+    thoughtsListener.remove()
+    setListener()
     
   }
   
