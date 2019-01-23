@@ -18,6 +18,9 @@
 		776ABC3521E1391D0036BE9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 776ABC3421E1391D0036BE9A /* GoogleService-Info.plist */; };
 		77B50A2121EE79FF00FE39ED /* AddThoughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B50A2021EE79FF00FE39ED /* AddThoughtVC.swift */; };
 		77DE78E221F111EB00BD9C9E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE78E121F111EB00BD9C9E /* Constants.swift */; };
+		9A7B09FE21F6FD9A00700A6A /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B09FD21F6FD9A00700A6A /* KeyboardBoundView.swift */; };
+		9A7B0A0021F7000F00700A6A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B09FF21F7000F00700A6A /* LoginVC.swift */; };
+		9A7B0A0221F701C600700A6A /* CreateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B0A0121F701C600700A6A /* CreateUserVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		776ABC3421E1391D0036BE9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77B50A2021EE79FF00FE39ED /* AddThoughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtVC.swift; sourceTree = "<group>"; };
 		77DE78E121F111EB00BD9C9E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9A7B09FD21F6FD9A00700A6A /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		9A7B09FF21F7000F00700A6A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		9A7B0A0121F701C600700A6A /* CreateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserVC.swift; sourceTree = "<group>"; };
 		BCD15600F99D6BC964F66418 /* Pods-LearningFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		CC65A4D958568EB9EB5EEB38 /* Pods_LearningFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -83,6 +89,7 @@
 				77B50A1D21EE730B00FE39ED /* View */,
 				77B50A1C21EE730500FE39ED /* Controller */,
 				776ABC2221E134BD0036BE9A /* AppDelegate.swift */,
+				9A7B09FD21F6FD9A00700A6A /* KeyboardBoundView.swift */,
 				776ABC2621E134BD0036BE9A /* Main.storyboard */,
 				776ABC2921E134BE0036BE9A /* Assets.xcassets */,
 				776ABC2B21E134BE0036BE9A /* LaunchScreen.storyboard */,
@@ -98,6 +105,8 @@
 			children = (
 				77B50A2021EE79FF00FE39ED /* AddThoughtVC.swift */,
 				776ABC2421E134BD0036BE9A /* MainVC.swift */,
+				9A7B09FF21F7000F00700A6A /* LoginVC.swift */,
+				9A7B0A0121F701C600700A6A /* CreateUserVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,8 +215,9 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -220,6 +230,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -229,7 +240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AA219CA94C4039E556CE873B /* [CP] Check Pods Manifest.lock */ = {
@@ -262,7 +273,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -273,7 +284,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -285,8 +296,11 @@
 			files = (
 				776ABC2521E134BD0036BE9A /* MainVC.swift in Sources */,
 				772D9DEE21F4FDF800E40D8B /* Thought.swift in Sources */,
+				9A7B0A0021F7000F00700A6A /* LoginVC.swift in Sources */,
 				77B50A2121EE79FF00FE39ED /* AddThoughtVC.swift in Sources */,
+				9A7B09FE21F6FD9A00700A6A /* KeyboardBoundView.swift in Sources */,
 				772D9DF021F4FF8400E40D8B /* ThoughtCell.swift in Sources */,
+				9A7B0A0221F701C600700A6A /* CreateUserVC.swift in Sources */,
 				776ABC2321E134BD0036BE9A /* AppDelegate.swift in Sources */,
 				77DE78E221F111EB00BD9C9E /* Constants.swift in Sources */,
 			);
