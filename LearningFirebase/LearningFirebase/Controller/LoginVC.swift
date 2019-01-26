@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
   
@@ -29,10 +30,19 @@ class LoginVC: UIViewController {
   
   
   @IBAction func buttonLoginTap(_ sender: Any) {
+    guard let email = textFieldEmail.text,
+      let password = textFieldPassword.text else { return }
+    
+    Auth.auth().signIn(withEmail: email, password: password) { user, error in
+      if let error = error {
+        debugPrint("Error signing in : \(error)")
+      } else {
+        self.dismiss(animated: true, completion: nil)
+      }
+    }
+    
   }
   
 
-  @IBAction func buttonCreateUserTap(_ sender: Any) {
-  }
   
 }

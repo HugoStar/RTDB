@@ -26,6 +26,8 @@ class MainVC: UIViewController {
   private var thoughtsListener: ListenerRegistration!
   private var selectedCategory = ThoughtCategory.funny.rawValue
   
+  private var handle: AuthStateDidChangeListenerHandle?
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,8 +43,24 @@ class MainVC: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    setListener()
+    
+    handle = Auth.auth().addStateDidChangeListener({ auth, user in
+      if user == nil {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
+        self.present(loginVC, animated: true, completion: nil)
+      } else {
+        self.setListener()
+      }
+    })
   }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    guard let thoughtsListener = thoughtsListener else { return }
+    thoughtsListener.remove()
+  }
+
   
   func setListener() {
     
@@ -72,11 +90,6 @@ class MainVC: UIViewController {
     }
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-    guard let thoughtsListener = thoughtsListener else { return }
-    thoughtsListener.remove()
-  }
 
   @IBAction func categoryChanged(_ sender: UISegmentedControl) {
     
@@ -96,6 +109,15 @@ class MainVC: UIViewController {
     
   }
   
+  @IBAction func logout(_ sender: UIBarButtonItem) {
+    do {
+      try Auth.auth().signOut()
+    } catch let error as NSError {
+      debugPrint("Error \(error)")
+    }
+  }
+  
+  
 }
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
@@ -107,6 +129,20 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "thoughtCell", for: indexPath) as! ThoughtCell
     cell.configureCell(thought: thoughts[indexPath.row])
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: "toComments", sender: thoughts[indexPath.row])
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if segue.identifier == "toComments",
+      let destination = segue.destination as? CommentsVC,
+      let thought = sender as? Thought {
+        destination.thought = thought
+    }
+    
   }
   
   

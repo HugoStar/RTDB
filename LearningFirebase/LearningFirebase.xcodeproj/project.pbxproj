@@ -10,6 +10,8 @@
 		28CB982A4A80D0F340B224D4 /* Pods_LearningFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC65A4D958568EB9EB5EEB38 /* Pods_LearningFirebase.framework */; };
 		772D9DEE21F4FDF800E40D8B /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772D9DED21F4FDF800E40D8B /* Thought.swift */; };
 		772D9DF021F4FF8400E40D8B /* ThoughtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772D9DEF21F4FF8400E40D8B /* ThoughtCell.swift */; };
+		775D2DA221FCF2F900A32B7F /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775D2DA121FCF2F900A32B7F /* CommentsVC.swift */; };
+		775D2DA421FCF75100A32B7F /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775D2DA321FCF75100A32B7F /* CommentCell.swift */; };
 		776ABC2321E134BD0036BE9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776ABC2221E134BD0036BE9A /* AppDelegate.swift */; };
 		776ABC2521E134BD0036BE9A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776ABC2421E134BD0036BE9A /* MainVC.swift */; };
 		776ABC2821E134BD0036BE9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776ABC2621E134BD0036BE9A /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		10A1212C13543186618A23C3 /* Pods-LearningFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		772D9DED21F4FDF800E40D8B /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
 		772D9DEF21F4FF8400E40D8B /* ThoughtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCell.swift; sourceTree = "<group>"; };
+		775D2DA121FCF2F900A32B7F /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
+		775D2DA321FCF75100A32B7F /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		776ABC1F21E134BD0036BE9A /* LearningFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		776ABC2221E134BD0036BE9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		776ABC2421E134BD0036BE9A /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				776ABC2421E134BD0036BE9A /* MainVC.swift */,
 				9A7B09FF21F7000F00700A6A /* LoginVC.swift */,
 				9A7B0A0121F701C600700A6A /* CreateUserVC.swift */,
+				775D2DA121FCF2F900A32B7F /* CommentsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				772D9DEF21F4FF8400E40D8B /* ThoughtCell.swift */,
+				775D2DA321FCF75100A32B7F /* CommentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,7 +303,9 @@
 				776ABC2521E134BD0036BE9A /* MainVC.swift in Sources */,
 				772D9DEE21F4FDF800E40D8B /* Thought.swift in Sources */,
 				9A7B0A0021F7000F00700A6A /* LoginVC.swift in Sources */,
+				775D2DA421FCF75100A32B7F /* CommentCell.swift in Sources */,
 				77B50A2121EE79FF00FE39ED /* AddThoughtVC.swift in Sources */,
+				775D2DA221FCF2F900A32B7F /* CommentsVC.swift in Sources */,
 				9A7B09FE21F6FD9A00700A6A /* KeyboardBoundView.swift in Sources */,
 				772D9DF021F4FF8400E40D8B /* ThoughtCell.swift in Sources */,
 				9A7B0A0221F701C600700A6A /* CreateUserVC.swift in Sources */,
