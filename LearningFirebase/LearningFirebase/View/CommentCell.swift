@@ -19,5 +19,15 @@ class CommentCell: UITableViewCell {
         super.awakeFromNib()
 
     }
+  
+  func configureCell(_ comment: Comment) {
+    userName.text = comment.username
+    commentText.text = comment.commentTxt
+    
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MMM d, hh:mm"
+    let timestamp = formatter.string(from: comment.timestamp)
+    timestemp.text = timestamp
+  }
 
 }
