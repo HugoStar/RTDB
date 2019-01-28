@@ -42,7 +42,8 @@ class AddThoughtVC: UIViewController, UITextViewDelegate {
       NUM_LIKES : 0,
       THOUGHT_TEXT : thougthText.text,
       TIMESTAMP : FieldValue.serverTimestamp(),
-      USERNAME : username
+      USERNAME : username,
+      USER_ID : Auth.auth().currentUser?.uid ?? ""
     ]) { error in
       
       if let error = error {

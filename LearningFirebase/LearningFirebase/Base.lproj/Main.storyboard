@@ -39,11 +39,11 @@
                                 <rect key="frame" x="0.0" y="128" width="320" height="440"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="thoughtCell" rowHeight="190" id="k7c-Fd-9II" customClass="ThoughtCell" customModule="LearningFirebase" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="190"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="thoughtCell" rowHeight="89" id="k7c-Fd-9II" customClass="ThoughtCell" customModule="LearningFirebase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k7c-Fd-9II" id="kd2-ho-MGk">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JonnyB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekj-Hp-0nE">
@@ -62,13 +62,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is my random thought..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9Q-es-MZa">
-                                                    <rect key="frame" x="15" y="42.5" width="290" height="119.5"/>
+                                                    <rect key="frame" x="15" y="42.5" width="290" height="18.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="uHo-L8-Plz">
-                                                    <rect key="frame" x="15" y="166" width="99" height="24"/>
+                                                    <rect key="frame" x="15" y="65" width="99" height="24"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starIconFilled" translatesAutoresizingMaskIntoConstraints="NO" id="kyy-iU-j2A">
                                                             <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -98,6 +98,9 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="optionsImageDark" translatesAutoresizingMaskIntoConstraints="NO" id="euM-EC-KRN">
+                                                    <rect key="frame" x="276" y="8" width="30" height="30"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -105,6 +108,7 @@
                                                 <constraint firstItem="F9Q-es-MZa" firstAttribute="leading" secondItem="kd2-ho-MGk" secondAttribute="leadingMargin" id="EIv-fR-NMr"/>
                                                 <constraint firstItem="F9Q-es-MZa" firstAttribute="top" secondItem="Ekj-Hp-0nE" secondAttribute="bottom" constant="8" id="IsL-Pu-XwC"/>
                                                 <constraint firstItem="NCj-bU-kUi" firstAttribute="centerY" secondItem="Ekj-Hp-0nE" secondAttribute="centerY" id="LNS-bp-haC"/>
+                                                <constraint firstItem="euM-EC-KRN" firstAttribute="centerY" secondItem="NCj-bU-kUi" secondAttribute="centerY" id="RFM-OC-Ia8"/>
                                                 <constraint firstItem="NCj-bU-kUi" firstAttribute="leading" secondItem="Ekj-Hp-0nE" secondAttribute="trailing" constant="8" id="VG7-Lu-fxc"/>
                                                 <constraint firstItem="Ekj-Hp-0nE" firstAttribute="leading" secondItem="kd2-ho-MGk" secondAttribute="leadingMargin" id="aR0-7l-UG1"/>
                                                 <constraint firstAttribute="bottom" secondItem="uHo-L8-Plz" secondAttribute="bottom" id="cdH-50-abK"/>
@@ -112,12 +116,14 @@
                                                 <constraint firstItem="uHo-L8-Plz" firstAttribute="leading" secondItem="kd2-ho-MGk" secondAttribute="leadingMargin" id="p8h-uI-WZu"/>
                                                 <constraint firstItem="Ekj-Hp-0nE" firstAttribute="top" secondItem="kd2-ho-MGk" secondAttribute="topMargin" id="pIk-qe-wjA"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NCj-bU-kUi" secondAttribute="trailing" constant="20" symbolic="YES" id="qAG-MX-9Mg"/>
+                                                <constraint firstAttribute="trailing" secondItem="euM-EC-KRN" secondAttribute="trailing" constant="14" id="wqt-Rj-wfM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentsImage" destination="7U9-ns-nge" id="rks-Sy-HYk"/>
                                             <outlet property="commentsNumLabel" destination="4f0-xK-Z9h" id="dH5-Kx-sda"/>
                                             <outlet property="likesNumberLabel" destination="rAG-7B-fhG" id="R4j-dg-kZJ"/>
+                                            <outlet property="optionsMenu" destination="euM-EC-KRN" id="l1K-bt-OjL"/>
                                             <outlet property="starImageView" destination="kyy-iU-j2A" id="xHn-SA-h89"/>
                                             <outlet property="thoughtTextLabel" destination="F9Q-es-MZa" id="rTf-wd-gId"/>
                                             <outlet property="timestampLabel" destination="NCj-bU-kUi" id="EUL-Ol-tpe"/>
@@ -159,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071.2" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1070.625" y="133.09859154929578"/>
         </scene>
         <!--CommentsVC-->
         <scene sceneID="MTV-NI-6xl">
@@ -225,12 +231,17 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="optionsImageDark" translatesAutoresizingMaskIntoConstraints="NO" id="oh9-fZ-IJC">
+                                                    <rect key="frame" x="276" y="5" width="30" height="30"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ACG-0k-zRL" firstAttribute="top" secondItem="I6L-Bj-c0R" secondAttribute="top" constant="8" id="0Ik-8I-75C"/>
                                                 <constraint firstItem="Nc0-eX-eJz" firstAttribute="centerY" secondItem="ACG-0k-zRL" secondAttribute="centerY" id="90e-eh-bKM"/>
+                                                <constraint firstItem="oh9-fZ-IJC" firstAttribute="centerY" secondItem="Nc0-eX-eJz" secondAttribute="centerY" id="CLE-mA-pS3"/>
                                                 <constraint firstAttribute="bottom" secondItem="eux-ck-VKk" secondAttribute="bottom" constant="7" id="CRh-Jt-IeU"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nc0-eX-eJz" secondAttribute="trailing" constant="20" symbolic="YES" id="CrE-Rp-a1A"/>
+                                                <constraint firstAttribute="trailing" secondItem="oh9-fZ-IJC" secondAttribute="trailing" constant="14" id="OCF-4C-SYC"/>
                                                 <constraint firstItem="eux-ck-VKk" firstAttribute="top" secondItem="ACG-0k-zRL" secondAttribute="bottom" constant="10" id="TJ9-94-v9y"/>
                                                 <constraint firstItem="eux-ck-VKk" firstAttribute="leading" secondItem="I6L-Bj-c0R" secondAttribute="leading" id="VEM-AQ-mVf"/>
                                                 <constraint firstItem="ACG-0k-zRL" firstAttribute="leading" secondItem="I6L-Bj-c0R" secondAttribute="leading" id="huI-pj-aoP"/>
@@ -240,6 +251,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentText" destination="eux-ck-VKk" id="6oB-Cf-L9l"/>
+                                            <outlet property="optionsMenu" destination="oh9-fZ-IJC" id="YKu-nt-lHH"/>
                                             <outlet property="timestemp" destination="Nc0-eX-eJz" id="VzK-e9-lgF"/>
                                             <outlet property="userName" destination="ACG-0k-zRL" id="UXr-su-I2m"/>
                                         </connections>
@@ -573,6 +585,7 @@
     <resources>
         <image name="addThoughtIcon" width="21" height="24"/>
         <image name="commentIcon" width="26" height="22"/>
+        <image name="optionsImageDark" width="30" height="30"/>
         <image name="starIconFilled" width="20" height="19"/>
     </resources>
 </document>

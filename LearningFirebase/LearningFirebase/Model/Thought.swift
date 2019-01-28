@@ -18,15 +18,17 @@ struct Thought {
   private(set) var numLikes: Int
   private(set) var numComments: Int
   private(set) var documentId: String
+  private(set) var userID: String!
   
   
-  init(username: String, timestamp: Date, thoughtTxt: String, numLikes: Int, numComments: Int, documentId: String) {
+  init(username: String, timestamp: Date, thoughtTxt: String, numLikes: Int, numComments: Int, documentId: String, userID: String) {
     self.username = username
     self.timestamp = timestamp
     self.thoughtTxt = thoughtTxt
     self.numLikes = numLikes
     self.numComments = numComments
     self.documentId = documentId
+    self.userID = userID
   }
   
   
@@ -44,9 +46,10 @@ struct Thought {
       let numLikes = data[NUM_LIKES] as? Int ?? 0
       let numComments = data[NUM_COMMENTS] as? Int ?? 0
       let documentID = document.documentID
+      let userID = document[USER_ID] as? String ?? ""
       
       
-      let newThought = Thought(username: userName, timestamp: timestamp, thoughtTxt: toughtText, numLikes: numLikes, numComments: numComments, documentId: documentID)
+      let newThought = Thought(username: userName, timestamp: timestamp, thoughtTxt: toughtText, numLikes: numLikes, numComments: numComments, documentId: documentID, userID: userID)
       
       thoughts.append(newThought)
     }
